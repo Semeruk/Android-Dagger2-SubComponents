@@ -14,7 +14,7 @@ public class DataModule {
 
     // Dagger will only look for methods annotated with @Provides
     @Provides
-    @Singleton
+    @Singleton // @Singleton in case of using one instance throughout the app
     // Application reference must come from ApplicationModule.class
     SharedPreferences provideSharedPrefs(Application application) {
         return PreferenceManager.getDefaultSharedPreferences(application);

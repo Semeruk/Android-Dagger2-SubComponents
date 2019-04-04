@@ -7,8 +7,8 @@ import javax.inject.Scope;
 
 // If we wish to use a component created for the
 // entire activity lifecycle,
-// we can define our own MainActivityScope interface
+// we can define our own UserActivityScope interface
 @Scope
 @Retention(value= RetentionPolicy.RUNTIME)
-public @interface MainActivityScope {
+public @interface UserActivityScope {
 }

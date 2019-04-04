@@ -2,14 +2,14 @@ package com.semeruk.android_dagger2_subcomponents.module;
 
 import android.app.Application;
 
-import com.semeruk.android_dagger2_subcomponents.component.subcomponent.MainActivitySubComponent;
+import com.semeruk.android_dagger2_subcomponents.component.subcomponent.UserActivitySubComponent;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 
-@Module(subcomponents = { MainActivitySubComponent.class })
+@Module(subcomponents = { UserActivitySubComponent.class })
 public class ApplicationModule {
 
     private Application mApplication;

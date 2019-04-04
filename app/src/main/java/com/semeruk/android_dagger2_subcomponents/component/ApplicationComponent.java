@@ -1,6 +1,6 @@
 package com.semeruk.android_dagger2_subcomponents.component;
 
-import com.semeruk.android_dagger2_subcomponents.component.subcomponent.MainActivitySubComponent;
+import com.semeruk.android_dagger2_subcomponents.component.subcomponent.UserActivitySubComponent;
 import com.semeruk.android_dagger2_subcomponents.module.ApplicationModule;
 import com.semeruk.android_dagger2_subcomponents.module.DataModule;
 
@@ -14,10 +14,10 @@ public interface ApplicationComponent {
 
     // Injection targets here
     //void inject(Application application);
-    /*void inject(MainActivity activity);
-    void inject(MainActivity activity);
-    void inject(MainActivity activity);
+    /*void inject(UserActivity activity);
+    void inject(UserActivity activity);
+    void inject(UserActivity activity);
     ...*/
 
-    MainActivitySubComponent.Builder mainActivityBuilder();
+    UserActivitySubComponent.Builder userActivityBuilder();
 }
