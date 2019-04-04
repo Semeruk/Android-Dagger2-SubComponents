@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
-import com.semeruk.android_dagger2_subcomponents.component.DaggerApplicationComponent;
 import com.semeruk.android_dagger2_subcomponents.module.MainActivityModule;
 
 import javax.inject.Inject;
@@ -19,6 +18,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DaggerApplicationComponent.create().mainActivityBuilder().build().inject(this);
+        initDagger();
+    }
+
+    private void initDagger() {
+        // Get ApplicationComponent
+        ((CustomApplication) getApplication()).getApplicationComponent()
+                // Get Builder as an interface
+                .mainActivityBuilder()
+                // Pass activity module
+                .mainActivityModule(new MainActivityModule(this))
+                // Then build the component
+                .build()
+                // After inject this activity to get inject instances from modules
+                .inject(this);
     }
 }
