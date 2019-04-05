@@ -8,13 +8,13 @@ import dagger.Subcomponent;
 
 @PromocodeScope
 @Subcomponent(modules = PromocodeModule.class)
-public interface PromocodeComponent {
+public interface PromocodeSubComponent {
 
     @Subcomponent.Builder
     interface Builder {
-        PromocodeComponent.Builder promocodeModule(PromocodeModule module);
-        PromocodeComponent build();
+        PromocodeSubComponent.Builder promocodeModule(PromocodeModule module);
+        PromocodeSubComponent build();
     }
 
-    public void inject(StorePromocodeFragment fragment);
+    void inject(StorePromocodeFragment fragment);
 }
