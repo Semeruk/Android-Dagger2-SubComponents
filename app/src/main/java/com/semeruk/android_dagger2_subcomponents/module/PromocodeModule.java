@@ -23,7 +23,7 @@ public class PromocodeModule {
 
     @PromocodeScope
     @Provides
-    ApiInterface getApiClient(Retrofit retrofit) {
+    ApiInterface provideApiClient(Retrofit retrofit) {
         return retrofit.create(ApiInterface.class);
     }
 }

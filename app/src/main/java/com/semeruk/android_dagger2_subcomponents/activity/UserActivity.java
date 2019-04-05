@@ -1,5 +1,6 @@
 package com.semeruk.android_dagger2_subcomponents.activity;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,7 +42,7 @@ public class UserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_user);
 
         ButterKnife.bind(this);
 
@@ -50,7 +51,8 @@ public class UserActivity extends AppCompatActivity {
 
     private void initDagger() {
         // Get ApplicationComponent
-        UserActivitySubComponent userActivitySubComponent = ((CustomApplication) getApplication()).getApplicationComponent()
+        UserActivitySubComponent userActivitySubComponent = ((CustomApplication) getApplication())
+                .getApplicationComponent()
                 // Get Builder as an interface
                 .userActivityBuilder()
                 // Pass activity module
@@ -100,5 +102,10 @@ public class UserActivity extends AppCompatActivity {
             public void onFailure(Call<List<Repository>> call, Throwable t) {
             }
         });
+    }
+
+    @OnClick(R.id.btn_show_store_activity)
+    public void showStoreActivity(View view) {
+        startActivity(new Intent(UserActivity.this, StoreActivity.class));
     }
 }
