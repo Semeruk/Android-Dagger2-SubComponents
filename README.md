@@ -1,4 +1,4 @@
-# Android Dagger2 Subcomponents approach
+# Android Dagger2 with Subcomponents approach
 
 This project shows that the class with the @Singleton annotation lasts the entire lifecycle of the application, but what if we need it only once?
 
